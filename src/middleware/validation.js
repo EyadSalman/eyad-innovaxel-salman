@@ -8,13 +8,3 @@ exports.validateCreate = async (req, res, next) => {
     return res.status(400).json({ message: 'Invalid or missing URL' });
   }
 
-  // generate a unique shortCode
-  let code, exists;
-  do {
-    code = generateCode();
-    exists = await URL.findOne({ shortCode: code });
-  } while (exists);
-
-  req.shortCode = code;
-  next();
-};

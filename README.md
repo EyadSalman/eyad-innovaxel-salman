@@ -138,12 +138,6 @@ All requests and responses use JSON. Errors return a JSON object with an `error`
 
 ---
 
-## Branch & Commit Guidelines
-
-* Use a **`dev`** branch for all feature work.
-* **`main`** branch should contain **only** the final `README.md` (no code).
-* Ensure **≥15 meaningful commits** on `dev`.
-* Commit messages are **7 words max**, imperative tense (e.g., "Add POST /shorten endpoint").
 
 
 ---

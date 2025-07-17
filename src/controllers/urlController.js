@@ -52,3 +52,14 @@ exports.deleteUrl = async (req, res, next) => {
     next(err);
   }
 };
+
+// Get access statistics
+exports.getStats = async (req, res, next) => {
+  try {
+    const rec = await URL.findOne({ shortCode: req.params.code });
+    if (!rec) return res.status(404).json({ message: 'Not found' });
+    res.json({ accessCount: rec.accessCount });
+  } catch (err) {
+    next(err);
+  }
+};

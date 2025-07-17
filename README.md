@@ -139,5 +139,3 @@ All requests and responses use JSON. Errors return a JSON object with an `error`
 ---
 
 
-
----

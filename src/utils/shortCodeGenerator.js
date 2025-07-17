@@ -1,4 +1,4 @@
-
+const crypto = require('crypto');
 
 module.exports = function generateCode(length = 6) {
   return crypto

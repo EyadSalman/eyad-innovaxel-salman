@@ -26,3 +26,18 @@ exports.getOriginalUrl = async (req, res, next) => {
     next(err);
   }
 };
+
+// Update the long URL
+exports.updateUrl = async (req, res, next) => {
+  try {
+    const updated = await URL.findOneAndUpdate(
+      { shortCode: req.params.code },
+      { url: req.body.url },
+      { new: true }
+    );
+    if (!updated) return res.status(404).json({ message: 'Not found' });
+    res.json(updated);
+  } catch (err) {
+    next(err);
+  }
+};
